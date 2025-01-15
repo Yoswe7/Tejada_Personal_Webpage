@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Josh Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Ensure full height and no margin */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+            color: white; /* Set text color to white */
+        }
+
+        /* Centering content using Flexbox */
+        body {
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            flex-direction: column;
+            text-align: center;
+            height: 100%; /* Allow the body to fill the viewport height */
+            overflow-x: auto; /* Allow vertical scrolling if content exceeds viewport */
+            background-color: #27408B; /* Set background color to dark royal blue */
+        }
+
+        .family-container {
+            max-width: 800px; /* Max width for content */
+            width: 100%; /* Ensure it takes up full width of the body */
+            padding: 20px; /* Add padding for spacing */
+            margin: 0 auto; /* Center the section */
+            box-sizing: border-box; /* Ensures padding doesn't exceed width */
+        }
+
+        img {
+            width: 100%; /* Make image responsive */
+            max-width: 500px; /* Max width for the image */
+            height: auto;
+            display: block; /* Remove inline display to allow centering */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto; /* Center horizontally */
+            margin-bottom: 20px; /* Space between image and caption */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        /* Styling for navigation menu */
+        nav {
+            width: 100%;
+            height: 10vh;
+            position: sticky;
+            background-color: #27408B; /* Dark royal blue for navbar */
+            z-index: 10; /* Ensure navbar stays on top */
+        }
+
+        .nav-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        .logo span {
+            color: #6A90F2; /* Lighter royal blue for logo */
+            text-shadow: 0 0 10px #6A90F2;
+        }
+
+        .links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .links a {
+            position: relative;
+            font-size: 1.2rem;
+            color: white; /* Set link color to white */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #6A90F2; /* Change color to lighter blue on hover */
+        }
+
+        .hamburg, .cancel {
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: white;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .dropdown {
+            display: none;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            transform: translateY(-500px);
+            width: 100%;
+            height: auto;
+            background-color: #27408B; /* Dark royal blue for dropdown */
+        }
+
+        .dropdown .links a {
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            display: block;
+        }
+
+        .dropdown .links a:hover {
+            background-color: #6A90F2; /* Lighter blue for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Josh Tejada</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="myresume.html">My Resume</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="myself.html">Myself</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="myfamily.html">My Family</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="myfavorites.html">My Favorites</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="myresume.html">My Resume</a>
+                <a href="myself.html">Myself</a>
+                <a href="myfamily.html">My Family</a>
+                <a href="myfavorites.html">My Favorites</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="family-container">
+        <h1>Hello, welcome to my family.</h1>
+        <img src="Family.jpg" alt="Family photo">
+        <p>My mother is Rhenelen S. Tejada, My father is Ramon L. Tejada. I'm the Eldest, Next is Isaiah Tejada 3 years younger than me and the youngest, Miguel Tejada 6 years younger than me.</p>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({offset:0});
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
+        }
+
+        function cancel(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
+        }
+    </script>
+</body>
+</html>

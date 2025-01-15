@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url('radiant-gradient.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    color: white; /* Set global text color to white */
+    text-align: center; /* Center all text by default */
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    background-color: rgba(39, 64, 139, 0.8);
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span {
+    color: #ebeef3;
+    text-shadow: 0 0 10px #1955ee;
+}
+
+.hamburg, .cancel {
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s linear;
+}
+
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #6A90F2;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-container .links a:hover {
+    color: #6A90F2;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .contact-btn {
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #6A90F2;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-container .contact-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-container .contact-btn:hover {
+    background-color: #6A90F2;
+}
+
+.dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    background-color: rgba(39, 64, 139, 0.8);
+    z-index: 100;
+}
+
+.dropdown .links a {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown .links a:hover {
+    background-color: #6A90F2;
+}
+
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.main-container .image {
+    width: 50%;
+}
+
+.main-container .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.main-container .content {
+    color: white;
+    width: 40%;
+}
+
+.content h1 {
+    font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+.content h1 span {
+    color: #e6eaf1;
+    text-shadow: 0 0 10px #ebecf0;
+}
+
+.content .typewriter {
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+.typewriter span {
+    color: #f4f4f5;
+    text-shadow: 0 0 5px #f8f8fa;
+    position: relative;
+}
+
+.typewriter span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid white;
+    animation: cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid #f1f1f3;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.social-links i:hover {
+    transform: scale(1.3);
+    background-color: #6A90F2;
+}
+
+.content button {
+    width: 40%;
+    height: 6vh;
+    margin-top: 30px;
+    background-color: #f7f7f7;
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.content button:hover {
+    transform: scale(1.1);
+    color: white;
+    background-color: transparent;
+    box-shadow: 0 0 40px white;
+}
+
+/* Additional styles for the family section */
+.family-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Center text */
+}
+
+.family-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.family-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.family-container p {
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 884px) {
+    nav .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+
+    .hamburg, .cancel {
+        display: block;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-container .content {
+        width: 80%;
+    }
+
+    .main-container .image {
+        width: 80%;
+    }
+}
